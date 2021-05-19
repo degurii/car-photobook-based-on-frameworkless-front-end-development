@@ -26,7 +26,7 @@
 ## 참고 링크
 [프레임워크 없는 프론트엔드 개발](http://www.acornpub.co.kr/book/frameworkless-front-end#toc)
 
-[프레임워크 없는 프론트엔드 개발 github](https://github.com/Apress/frameworkless-front-end-development)
+[프레임워크 없는 프론트엔드 개발 - github](https://github.com/Apress/frameworkless-front-end-development)
 
 [고양이 사진첩 애플리케이션 - 프로그래머스](https://programmers.co.kr/skill_check_assignments/100)
 
