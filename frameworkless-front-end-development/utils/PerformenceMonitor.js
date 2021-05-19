@@ -1,9 +1,9 @@
 let panel,
     start,
-    frame = 0;
+    frames = 0;
 
 const create = () => {
-    const div = document.createELement('div')
+    const div = document.createElement('div')
 
     div.style.position = 'fixed';
     div.style.left = '0px';
@@ -17,7 +17,7 @@ const create = () => {
 };
 
 const tick = () => {
-    frame++;
+    frames++;
     const now = window.performance.now();
     if (now >= start + 1000) {
         panel.innerText = frames;
