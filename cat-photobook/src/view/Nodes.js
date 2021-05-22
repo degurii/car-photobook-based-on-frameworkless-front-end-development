@@ -1,8 +1,8 @@
-import Node from '../component/Node.js';
+import Node from '../components/Node.js';
 
 const Nodes = (targetElement, {nodes}) => {
     const prev = {
-        type: 'prev',
+        type: 'PREV',
     };
 
     const newNodes = targetElement.cloneNode(true);

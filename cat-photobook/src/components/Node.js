@@ -1,13 +1,13 @@
 const Node = ({name, type}) => {
     const imgPath = {
-        file: './assets/file.png',
-        dir: './assets/directory.png',
-        prev: './assets/prev.png',
+        FILE: './assets/file.png',
+        DIRECTORY: './assets/directory.png',
+        PREV: './assets/prev.png',
     }
     return `
     <div class="Node">
         <img src="${imgPath[type]}" alt="${type} icon">
-        ${type === 'prev' ? '' : '<div>' + name + '</div>'}
+        ${type === 'PREV' ? '' : '<div>' + name + '</div>'}
     </div>
     `
 };
