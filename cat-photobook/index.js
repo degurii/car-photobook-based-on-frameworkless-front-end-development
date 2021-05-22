@@ -1,8 +1,8 @@
-import Breadcrumb from './view/Breadcrumb.js';
-import Nodes from './view/Nodes.js';
+import Breadcrumb from './src/view/Breadcrumb.js';
+import Nodes from './src/view/Nodes.js';
 
-import registry from './registry.js';
-import applyDiff from './applyDiff.js';
+import registry from './src/registry.js';
+import applyDiff from './src/applyDiff.js';
 
 registry.add('breadcrumb', Breadcrumb);
 registry.add('nodes', Nodes);
