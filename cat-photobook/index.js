@@ -11,7 +11,13 @@ let state = {
     currentPath: [],
     nodes: [],
 };
-console.log('hi');
+
+(async function init(){
+    const response = await fetch('https://zl3m4qq0l9.execute-api.ap-northeast-2.amazonaws.com/dev');
+    state.nodes = await response.json();
+    state.currentPath = ['root'];
+}())
+
 const render = () => {
     const app = document.querySelector('.App');
     const newApp = registry.renderRoot(app, state);
