@@ -1,7 +1,3 @@
-import todosView from "./view/todos";
-import counterView from "./view/counter";
-import filtersView from "./view/filters";
-
 const registry = {};
 
 const renderWrapper = component => {
