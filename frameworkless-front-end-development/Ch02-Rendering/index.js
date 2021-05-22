@@ -1,11 +1,10 @@
-import getTodos from './getTodos.js';
-import todosView from "./view/todos";
-import counterView from "./view/counter";
-import filtersView from "./view/filters";
+import getTodos from './src/getTodos.js';
+import todosView from "./src/view/todos";
+import counterView from "./src/view/counter";
+import filtersView from "./src/view/filters";
 
-import registry from './registry.js';
-import init from "../../utils/PerformenceMonitor";
-import applyDiff from "./applyDiff";
+import registry from './src/registry.js';
+import applyDiff from "./src/applyDiff";
 
 registry.add('todos', todosView);
 registry.add('counter', counterView);
