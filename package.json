@@ -1,9 +1,10 @@
 {
   "name": "cat-party",
   "version": "1.0.0",
-  "description": "책 **프레임워크 없는 프론트엔드 개발**을 공부하며, 그 내용을 바탕으로 프로그래머스 **고양이 사진첩 애플리케이션** 과제를 완성해나갑니다.",
+  "description": "책 '프레임워크 없는 프론트엔드 개발'을 공부하며, 그 내용을 바탕으로 프로그래머스 '고양이 사진첩 애플리케이션' 과제를 완성해나갑니다.",
   "main": "index.js",
   "scripts": {
+    "start": "npx parcel $INIT_CWD/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
