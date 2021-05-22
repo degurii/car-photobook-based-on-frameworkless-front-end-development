@@ -2,11 +2,7 @@ import todosView from "./view/todos";
 import counterView from "./view/counter";
 import filtersView from "./view/filters";
 
-const registry = {
-    todos: todosView,
-    counter: counterView,
-    filters: filtersView,
-};
+const registry = {};
 
 const renderWrapper = component => {
     return (targetElement, state) => {
