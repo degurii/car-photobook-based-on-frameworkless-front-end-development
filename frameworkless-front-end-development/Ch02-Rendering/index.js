@@ -25,14 +25,14 @@ const state = {
 
 // 개선 후 render
 const render = () => {
-    const main = document.querySelector('.todoapp');
-    const newMain = registry.renderRoot(main, state);
-    applyDiff(document.body, main, newMain);
-    window.requestAnimationFrame(render);
+    window.requestAnimationFrame(() => {
+        const main = document.querySelector('.todoapp');
+        const newMain = registry.renderRoot(main, state);
+        applyDiff(document.body, main, newMain);
+    });
 };
-
-window.requestAnimationFrame(render);
 
 window.setInterval(() => {
     state.todos = getTodos();
+    render();
 }, 3000);
