@@ -17,15 +17,33 @@ const state = {
     currentFilter: 'All',
 };
 
+const events = {
+    deleteItem: index => {
+        state.todos.splice(index, 1);
+        render();
+    },
+    addItem: text => {
+        state.todos.push({
+            text,
+            completed: false
+        });
+        render();
+    },
+};
+
 const render = () => {
     window.requestAnimationFrame(() => {
         const main = document.querySelector('#root');
-        const newMain = registry.renderRoot(main, state);
+        const newMain = registry.renderRoot(main, state, events);
         applyDiff(document.body, main, newMain);
     });
 };
 
-window.setInterval(() => {
+window.setTimeout(() => {
     state.todos = getTodos();
     render();
-}, 3000);
+}, 0);
+// window.setInterval(() => {
+//     state.todos = getTodos();
+//     render();
+// }, 3000);

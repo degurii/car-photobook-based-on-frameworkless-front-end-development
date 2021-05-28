@@ -8,7 +8,7 @@ const createNewTodoNode = () => {
     return template.content.firstElementChild.cloneNode(true);
 };
 
-const getTodoElement = todo => {
+const getTodoElement = (todo, index, events) => {
     const {
         text,
         completed
@@ -23,14 +23,20 @@ const getTodoElement = todo => {
         element.classList.add('completed');
         element.querySelector('input.toggle').checked = true;
     }
+
+    const handler = e => events.deleteItem(index);
+
+    element.querySelector('button.destroy')
+        .addEventListener('click', handler);
+
     return element;
 };
 
-const todosView = (targetElement, {todos}) => {
+const todosView = (targetElement, {todos}, events) => {
     const newTodoList = targetElement.cloneNode(true);
     newTodoList.innerHTML = '';
     const todosElements = todos
-        .map(getTodoElement)
+        .map((todo, index) => getTodoElement(todo, index, events))
         .forEach(element => newTodoList.appendChild(element));
 
     return newTodoList;
