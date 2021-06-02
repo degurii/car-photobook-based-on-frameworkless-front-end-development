@@ -5,9 +5,13 @@ const Nodes = (targetElement, {nodes}) => {
         type: 'PREV',
     };
 
+    const element = createNewNodesElement();
+
     const newNodes = targetElement.cloneNode(true);
-    const nodesElements = Node(prev) + nodes.map(Node).join('');
-    newNodes.innerHTML = nodesElements;
+    newNodes.appendChild(Node(prev));
+    nodes
+        .map(Node)
+        .forEach(element => newNodes.appendChild(element));
 
     return newNodes;
 };
