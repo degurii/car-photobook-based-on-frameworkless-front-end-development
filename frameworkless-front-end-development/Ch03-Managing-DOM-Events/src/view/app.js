@@ -1,4 +1,4 @@
-let template
+let template;
 
 const createAppElement = () => {
     if (!template) {
