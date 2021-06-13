@@ -1,27 +1,26 @@
 let template;
-
 const createNewNodeElement = () => {
     if (!template) {
-        template = document.getElementById('node');
+        template = document.querySelector('#node');
     }
-    return template.content.firstElementChild.cloneNode(true);
+    return template.content.cloneNode(true);
 }
+const Node = node => {
+    const iconPath = `./assets/${node.type.toLowerCase()}.png`;
 
-const Node = ({name, type}) => {
-    const iconPath = `./assets/${type.toLowerCase()}.png`;
-
-    const element = createNewNodeElement();
-    const $img = element.querySelector('img');
+    const newNode = createNewNodeElement().firstElementChild;
+    const $img = newNode.querySelector('img');
     $img.src = iconPath;
-    $img.alt = `${type} icon`;
+    $img.alt = `${node.type} icon`;
 
-    if(name !== 'PREV') {
+    if (node.type !== 'PREV') {
         const $name = document.createElement('div');
-        $name.textContent = name;
-        element.appendChild($name);
+        $name.textContent = node.name;
+
+        newNode.appendChild($name);
     }
 
-    return element;
-};
+    return newNode;
+}
 
 export default Node;
