@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>고양이 사진첩!</title>
+    <link rel="stylesheet" href="./src/styles/style.css">
+</head>
+
+<body>
+<template id="node">
+    <div class="Node">
+        <img src="" alt="">
+    </div>
+</template>
+<template id="app">
+    <h1>고양이 사진첩</h1>
+    <main class="App">
+        <nav class="Breadcrumb" data-component="breadcrumb"></nav>
+        <div class="Nodes" data-component="nodes"></div>
+    </main>
+</template>
+<template id="loading">
+    <div class="Modal Loading">
+        <div class="content">
+            <img src="./assets/nyan-cat.gif" alt="loading image">
+        </div>
+    </div>
+</template>
+<template id="viewer">
+    <div class="Modal ImageViewer">
+        <div class="content">
+            <img src="" alt="">
+        </div>
+</template>
+
+<div id="root">
+    <div data-component="app"></div>
+</div>
+<script type="module" src="index.js"></script>
+</body>
+
+</html>
