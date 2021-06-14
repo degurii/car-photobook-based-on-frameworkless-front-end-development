@@ -20,6 +20,7 @@ const Node = node => {
         newNode.appendChild($name);
     }
 
+
     return newNode;
 }
 

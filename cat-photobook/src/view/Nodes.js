@@ -1,26 +1,36 @@
 import Node from '../components/Node.js';
 
-const Nodes = (targetElement, state) => {
+const addClickEvents = (targetElement, state, events) => {
+    targetElement.addEventListener('click', async e => {
+        const clickedElement = e.target.closest('.Node');
+        if (!clickedElement) return;
+
+        events.activateLoading();
+
+        const clickedIndex = Array
+            .from(clickedElement.parentNode.children)
+            .findIndex(elem => elem === clickedElement);
+
+        const clicked = state.nodes[clickedIndex];
+        if (clicked.type === 'FILE') {
+            events.openFile(clicked);
+        } else {
+            await events.openDirectory(clicked);
+        }
+
+        events.deactivateLoading();
+    });
+}
+
+const Nodes = (targetElement, state, events) => {
     const newNodes = targetElement.cloneNode(true);
     newNodes.innerHTML = '';
 
-    const { path, nodes } = state;
-    const currentNodes = [...nodes];
-    if (path.length > 1) {
-        const currentDirectory = path[path.length - 1];
-        const prev = {
-            id: currentDirectory.parent?.id,
-            name: 'prev',
-            type: 'PREV',
-            filePath: null,
-            parent: null,
-        }
-        currentNodes.unshift(prev);
-    }
-
-    currentNodes
+    state.nodes
         .map(node => Node(node))
         .forEach(elem => newNodes.appendChild(elem));
+
+    addClickEvents(newNodes, state, events);
 
     return newNodes;
 };
