@@ -3,3 +3,4 @@
 **/.*
 **/*.svg
 **/*.png
+**/node_modules
