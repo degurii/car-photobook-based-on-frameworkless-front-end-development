@@ -6,7 +6,6 @@ export default () => {
 
     const checkRoutes = () => {
         const currentRoute = routes.find(route => route.fragment === window.location.hash);
-
         if (!currentRoute) {
             notFound();
             return;
@@ -38,7 +37,6 @@ export default () => {
         if (!window.location.hash) {
             window.location.hash = '#/';
         }
-
         checkRoutes();
     }
 

@@ -6,7 +6,7 @@ export default container => {
         container.textContent = 'This is List Page';
     };
     const notFound = () => {
-        conatiner.textContent = 'Page Not Found!';
+        container.textContent = 'Page Not Found!';
     };
 
     return {
