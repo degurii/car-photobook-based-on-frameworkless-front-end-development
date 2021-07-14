@@ -1,0 +1,16 @@
+{
+  "name": "navigo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "navigo": "^8.11.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
