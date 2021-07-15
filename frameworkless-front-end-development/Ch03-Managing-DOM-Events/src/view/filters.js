@@ -1,7 +1,7 @@
 const filtersView = (targetElement, {currentFilter}) => {
-    const newCounter = targetElement.cloneNode(true);
+    const newFilters = targetElement.cloneNode(true);
     Array
-        .from(newCounter.querySelector('li a'))
+        .from(newFilters.querySelector('li a'))
         .forEach(a => {
             if (a.textContent === currentFilter) {
                 a.classList.add('selected');
@@ -10,7 +10,7 @@ const filtersView = (targetElement, {currentFilter}) => {
             }
         });
 
-    return newCounter;
+    return newFilters;
 };
 
 export default filtersView;
