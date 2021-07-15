@@ -61,13 +61,18 @@ const filterTodos = (todos, filter) => {
     if (filter === 'Completed') {
         return todos.filter(isCompleted);
     }
-   
+
     return [...todos];
 };
-const todosView = (targetElement, {todos}, events) => {
+const todosView = (targetElement, state, events) => {
+    const {todos, currentFilter} = state;
     const newTodoList = targetElement.cloneNode(true);
+
     newTodoList.innerHTML = '';
-    const todosElements = todos
+
+    const filteredTodos = filterTodos(todos, currentFilter);
+
+    filteredTodos
         .map((todo, index) => getTodoElement(todo, index, events))
         .forEach(element => newTodoList.appendChild(element));
 
