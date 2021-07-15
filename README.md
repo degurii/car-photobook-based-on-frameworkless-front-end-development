@@ -25,9 +25,9 @@
 
 #### ✅ Ch5. HTTP 요청
 
-#### ⚠️ Ch6. 라우팅
+#### ✅ Ch6. 라우팅
 
-#### ❌ Ch7. 상태 관리
+#### ⚠️ Ch7. 상태 관리
 
 ## 참고 링크
 [프레임워크 없는 프론트엔드 개발](http://www.acornpub.co.kr/book/frameworkless-front-end#toc)
